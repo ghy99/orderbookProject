@@ -15,22 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\APICaller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="apicaller.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OrderBook.cpp">
+    <ClCompile Include="src\OrderBook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="apicaller.h">
+    <ClInclude Include="include\APICaller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OrderBook.h">
+    <ClInclude Include="include\OrderBook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
