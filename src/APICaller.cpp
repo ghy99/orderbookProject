@@ -5,16 +5,19 @@
 using namespace std;
 
 size_t write_to_string(void* ptr, size_t size, size_t count, void* stream) {
+	// Store the returned json response from the HTTP request in a string. 
 	((string*)stream)->append((char*)ptr, 0, size * count);
 	return size * count;
 }
 
 string setSymbol(string& url, string& symbol) {
+	// Set the URL for the HTTP GET request. 
 	url += "&symbol=" + symbol;
 	return url;
 }
 
 string snapshot(string& symbol) {
+	// Perform a HTTP GET request to the URL to retrieve the top 5 bids and asks for a given Binance symbol. 
 	CURL* curl;
 	CURLcode result;
 	string url = "https://api.binance.com/api/v3/depth?limit=5";
@@ -50,9 +53,4 @@ string snapshot(string& symbol) {
 	}
 	curl_global_cleanup();
 	return response;
-}
-
-void depthUpdate(string& symbol) {
-	cout << "### DEPTH UPDATE ###" << endl;
-	cout << "symbol entered: " << symbol << endl;
 }

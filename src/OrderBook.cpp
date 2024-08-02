@@ -5,51 +5,67 @@
 
 using namespace std;
 
-Bid::Bid(float price, float qty) : price(price), qty(qty) {}
+Bid::Bid(float price, float qty) : price(price), qty(qty) {
+	// Constructor for a Bid. 
+}
 
 void Bid::setPrice(float price) {
+	// Setter method for price in a bid. 
 	Bid::price = price;
 }
 
 void Bid::setQty(float qty) {
+	// Setter method for quantity in a bid. 
 	Bid::qty = qty;
 }
 
 float Bid::getPrice() {
+	// Getter method for price in a bid.
 	return Bid::price;
 }
 
 float Bid::getQty() {
+	// Getter method for quantity in a bid.
 	return Bid::qty;
 }
 
 void Bid::printBid() {
+	// Print the price and quantity for a bid. 
 	cout << fixed << setprecision(5) << price << "---->" << qty << endl;
 }
 
-Ask::Ask(float price, float qty) : price(price), qty(qty) {}
+Ask::Ask(float price, float qty) : price(price), qty(qty) {
+	// Constructor for an Ask. 
+}
 
 void Ask::setPrice(float price) {
+	// Setter method for price in an Ask. 
 	Ask::price = price;
 }
 
 void Ask::setQty(float qty) {
+	// Setter method for quantity in an Ask. 
 	Ask::qty = qty;
 }
 
 float Ask::getPrice() {
+	// Getter method for price in an Ask. 
 	return Ask::price;
 }
 
 float Ask::getQty() {
+	// Getter method for quantity in an Ask. 
 	return Ask::qty;
 }
 
 void Ask::printAsk() {
+	// Print the price and quantity for an Ask. 
 	cout << fixed << setprecision(5) << price << "---->" << qty << endl;
 }
 
-OrderBook::OrderBook() {}
+OrderBook::OrderBook() {
+	// Constructor for an OrderBook. 
+}
 
 void OrderBook::setOrderBook(json result)
 {
@@ -83,36 +99,37 @@ void OrderBook::setOrderBook(json result)
 }
 
 void OrderBook::setLastUpdateId(string lastUpdateId) {
-	// Set the Last Update ID
+	// Setter method for the Last Update ID.
 	OrderBook::lastUpdateId = lastUpdateId;
 }
 
 void OrderBook::setBids(vector<Bid> bids) {
-	// Store the bids in list of lists[int].
+	// Setter method for the top 5 bids. 
 	OrderBook::bids = bids;
 }
 
 void OrderBook::setAsks(std::vector<Ask> asks) {
-	// Store the asks in list of lists[int].
+	// Setter method for the top 5 asks. 
 	OrderBook::asks = asks;
 }
 
 string OrderBook::getLastUpdateId() {
-	// Return last update ID
+	// Getter method for the Last Update ID. 
 	return OrderBook::lastUpdateId;
 }
 
 vector<Bid> OrderBook::getBids() {
-	// Return bids 
+	// Getter method for the top 5 bids. 
 	return OrderBook::bids;
 }
 
 vector<Ask> OrderBook::getAsks() {
-	// Return asks
+	// Getter method for the top 5 asks. 
 	return OrderBook::asks;
 }
 
 void OrderBook::printBids() {
+	// Display each bid in the order book.
 	cout << "BIDS:" << endl;
 	cout << "Price:\t\tQuantity:" << endl;
 	for (int i = 0; i < bids.size(); i++) {
@@ -122,6 +139,7 @@ void OrderBook::printBids() {
 }
 
 void OrderBook::printAsks() {
+	// Display each ask in the order book.
 	cout << "ASKS:" << endl;
 	cout << "Price:\t\tQuantity:" << endl;
 	for (int i = 0; i < asks.size(); i++) {
@@ -131,6 +149,7 @@ void OrderBook::printAsks() {
 }
 
 void OrderBook::printOrderBook() {
+	// Display the bids and asks in the order book.
 	cout << "Last update ID: " << OrderBook::getLastUpdateId() << endl;;
 	OrderBook::printBids();
 	OrderBook::printAsks();
