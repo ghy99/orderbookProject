@@ -24,12 +24,18 @@
     <ClCompile Include="src\OrderBook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\APICaller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\OrderBook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

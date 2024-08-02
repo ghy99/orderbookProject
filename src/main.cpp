@@ -8,6 +8,7 @@
 #include <nlohmann/json.hpp>
 #include "APICaller.h"
 #include "OrderBook.h"
+#include "utilities.h"
 
 using namespace std;
 using namespace std::this_thread;
@@ -23,11 +24,18 @@ int main()
     while (1) {
         string result = snapshot(symbol);
         json result_json = json::parse(result);
-        ob.setOrderBook(result_json);
-        ob.printOrderBook();
-        sleep_for(seconds(2));
-        system("cls");
+        if (checkInputValidity(result_json)) {
+            ob.setOrderBook(result_json);
+            ob.printOrderBook();
+            sleep_for(seconds(2));
+            system("cls");
+        }
+        else {
+            cout << "invalid input symbol. Exiting." << endl;
+            break;
+        }
     }
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

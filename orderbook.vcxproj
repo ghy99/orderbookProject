@@ -137,10 +137,12 @@
     <ClCompile Include="src\APICaller.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\OrderBook.cpp" />
+    <ClCompile Include="utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\APICaller.h" />
     <ClInclude Include="include\OrderBook.h" />
+    <ClInclude Include="include\utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
